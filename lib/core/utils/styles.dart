@@ -34,6 +34,13 @@ final robotoBlack = TextStyle(
   fontSize: Dimensions.fontSizeDefault,
 );
 
+final splashText = TextStyle(
+  fontFamily: AppConstants.fontFamily,
+  fontWeight: FontWeight.w600,
+  color: Colors.white,
+  fontSize: Dimensions.paddingSizeExtraOverLarge,
+);
+
 final BoxDecoration riderContainerDecoration = BoxDecoration(
   borderRadius: const BorderRadius.all(Radius.circular(Dimensions.radiusSmall)),
   color: Theme.of(Get.context!).primaryColor.withValues(alpha: 0.1), shape: BoxShape.rectangle,
