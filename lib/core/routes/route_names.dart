@@ -1,0 +1,10 @@
+class RouteNames {
+  static const String splash = 'splash';
+  static const String language = 'language';
+  static const String dashboard = 'dashboard';
+  static const String home = 'home';
+  static const String store = 'store';
+  static const String cart = 'cart';
+  static const String checkout = 'checkout';
+  static const String profile = 'profile';
+}
