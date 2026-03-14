@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
@@ -36,12 +37,12 @@ Future<void> main() async {
 
     if(GetPlatform.isAndroid) {
     await Firebase.initializeApp(
-      options: const FirebaseOptions(
-        apiKey: "AIzaSyBJhxsY7Hdo2rBqWpgYEl07xflWiIUA3dY",
-        appId: "1:83177097833:android:e2c9eb3a6531bafeee30f8",
-        messagingSenderId: "83177097833",
-        projectId: "flutter-advanced-73a0b",
-        storageBucket: "flutter-advanced-73a0b.firebasestorage.app",
+      options: FirebaseOptions(
+        apiKey: dotenv.env['FIREBASE_API_KEY']!,
+        appId: dotenv.env['FIREBASE_APP_ID']!,
+        messagingSenderId: dotenv.env['FIREBASE_MESSAGING_SENDER_ID']!,
+        projectId: dotenv.env['FIREBASE_PROJECT_ID']!,
+        storageBucket: dotenv.env['FIREBASE_STORAGE_BUCKET']!,
       ),
     );
   } else {

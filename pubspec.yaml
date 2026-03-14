@@ -48,6 +48,7 @@ dependencies:
   go_router: ^17.1.0
   connectivity_plus: ^7.0.0
   shared_preferences: ^2.5.3
+  flutter_dotenv: ^6.0.0
 
 dev_dependencies:
   flutter_test:
