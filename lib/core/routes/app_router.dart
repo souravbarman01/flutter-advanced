@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_advanced/core/routes/route_names.dart';
 import 'package:go_router/go_router.dart';
-import 'package:get/get.dart';
 import '../../features/cart/screens/cart_screen.dart';
 import '../../features/checkout/screens/checkout_screen.dart';
 import '../../features/dashboard/screens/dashboard_screen.dart';
 import '../../features/home/screens/home_screen.dart';
 import '../../features/language/screen/language_screen.dart';
+import '../../features/menu/screens/menu_screen.dart';
 import '../../features/profile/screens/profile_screen.dart';
 import '../../features/splash/screens/splash_screen.dart';
 import '../../features/store/screens/store_screen.dart';
@@ -28,6 +27,12 @@ class AppRouter {
         path: '/language',
         name: RouteNames.language,
         builder: (context, state) => const LanguageScreen(),
+      ),
+
+      GoRoute(
+        path: '/menu',
+        name: RouteNames.menu,
+        builder: (context, state) => const MenuScreen(),
       ),
 
       // Dashboard (Nested Navigation Strategy)
