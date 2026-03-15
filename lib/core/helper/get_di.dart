@@ -6,12 +6,19 @@ import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../features/language/domain/model/language_model.dart';
+import '../../features/store/controllers/store_items_controller.dart';
+import '../../features/store/data/store_items_repository.dart';
 import '../utils/app_constants.dart';
 
 Future<Map<String, Map<String, String>>> init() async {
   /// Core
   final sharedPreferences = await SharedPreferences.getInstance();
   Get.lazyPut(() => sharedPreferences);
+  Get.lazyPut<StoreItemsRepository>(() => StoreItemsRepository(), fenix: true);
+  Get.lazyPut<StoreItemsController>(
+    () => StoreItemsController(repository: Get.find<StoreItemsRepository>()),
+    fenix: true,
+  );
   //Get.lazyPut(() => ApiClient(appBaseUrl: AppConstants.baseUrl, sharedPreferences: Get.find()));
 
 

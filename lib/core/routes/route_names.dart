@@ -8,4 +8,7 @@ class RouteNames {
   static const String checkout = 'checkout';
   static const String profile = 'profile';
   static const String menu = 'menu';
+  static const String addItem = 'addItem';
+  static const String itemDetails = 'itemDetails';
+  static const String editItem = 'editItem';
 }

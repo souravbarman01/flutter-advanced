@@ -20,10 +20,10 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<MenuModel> menuList = <MenuModel>[
-      MenuModel(icon: Images.profileIcon, title: 'Profile', route: ''),
+      MenuModel(icon: Images.profileIcon, title: 'Profile', route: '/dashboard/profile'),
       MenuModel(icon: Images.orders, title: 'Orders', route: ''),
       MenuModel(icon: Images.walletIcon, title: 'Wallet', route: ''),
-      MenuModel(icon: Images.storeIcon, title: 'Store', route: ''),
+      MenuModel(icon: Images.storeIcon, title: 'Store', route: '/dashboard/store'),
       MenuModel(icon: Images.addressIcon, title: 'Address', route: ''),
       MenuModel(icon: Images.couponIcon, title: 'Coupons', route: ''),
       MenuModel(icon: Images.languageIcon, title: 'Language', route: ''),

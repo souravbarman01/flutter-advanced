@@ -8,6 +8,8 @@ import '../../features/language/screen/language_screen.dart';
 import '../../features/menu/screens/menu_screen.dart';
 import '../../features/profile/screens/profile_screen.dart';
 import '../../features/splash/screens/splash_screen.dart';
+import '../../features/store/screens/add_item_screen.dart';
+import '../../features/store/screens/item_details_screen.dart';
 import '../../features/store/screens/store_screen.dart';
 
 class AppRouter {
@@ -51,6 +53,29 @@ class AppRouter {
             path: 'store',
             name: RouteNames.store,
             builder: (context, state) => const StoreScreen(),
+            routes: [
+              GoRoute(
+                path: 'add-item',
+                name: RouteNames.addItem,
+                builder: (context, state) => const AddItemScreen(),
+              ),
+              GoRoute(
+                path: 'item/:itemId',
+                name: RouteNames.itemDetails,
+                builder: (context, state) => ItemDetailsScreen(
+                  itemId: state.pathParameters['itemId']!,
+                ),
+                routes: [
+                  GoRoute(
+                    path: 'edit',
+                    name: RouteNames.editItem,
+                    builder: (context, state) => AddItemScreen(
+                      itemId: state.pathParameters['itemId'],
+                    ),
+                  ),
+                ],
+              ),
+            ],
           ),
           GoRoute(
             path: 'profile',
